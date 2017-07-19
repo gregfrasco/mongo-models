@@ -131,7 +131,7 @@ class MongoModels {
                 total: 0
             }
         };
-
+        filter.toDelete = null;
         fields = this.fieldsAdapter(fields);
         sort = this.sortAdapter(sort);
 
@@ -147,8 +147,6 @@ class MongoModels {
                     skip: (page - 1) * limit,
                     sort
                 };
-
-                filter.toDelete = null;
 
                 self.find(filter, fields, options, done);
             }
@@ -305,8 +303,6 @@ class MongoModels {
         const doc = args.shift();
         const options = Hoek.applyToDefaults({ returnOriginal: false }, args.pop() || {});
 
-        filter.toDelete = null;
-
         args.push(filter);
         args.push(doc);
         args.push(options);
@@ -343,8 +339,6 @@ class MongoModels {
         const filter = args.shift();
         const doc = args.shift();
         const options = Hoek.applyToDefaults({ returnOriginal: false }, args.pop() || {});
-
-        filter.toDelete = null;
 
         args.push(filter);
         args.push(doc);
