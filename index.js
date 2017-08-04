@@ -131,7 +131,9 @@ class MongoModels {
                 total: 0
             }
         };
-        filter.toDelete = null;
+        if(!filter.toDelete) {
+            filter.toDelete = null;
+        }
         fields = this.fieldsAdapter(fields);
         sort = this.sortAdapter(sort);
 
@@ -267,7 +269,9 @@ class MongoModels {
         for (let i = 0; i < args.length; ++i) {
             args[i] = arguments[i];
         }
-        args[0]['toDelete'] = null;
+        if(!args[0]['toDelete']) {
+            args[0]['toDelete'] = null;
+        }
         const collection = MongoModels.db.collection(this.collection);
         const callback = this.resultFactory.bind(this, args.pop());
 
@@ -281,7 +285,9 @@ class MongoModels {
         for (let i = 0; i < args.length; ++i) {
             args[i] = arguments[i];
         }
-        args[0]['toDelete'] = null;
+        if(!args[0]['toDelete']) {
+            args[0]['toDelete'] = null;
+        }
         const collection = MongoModels.db.collection(this.collection);
         const callback = this.resultFactory.bind(this, args.pop());
 
