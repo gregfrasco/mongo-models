@@ -28,6 +28,7 @@
   "homepage": "https://github.com/jedireza/mongo-models",
   "devDependencies": {
     "code": "4.x.x",
+    "eslint-config-hapi": "^10.1.0",
     "lab": "13.x.x",
     "mongodb": "2.x.x",
     "opn-cli": "3.x.x",
